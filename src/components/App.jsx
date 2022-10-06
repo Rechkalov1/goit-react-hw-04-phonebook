@@ -13,12 +13,7 @@ export function App() {
   useEffect(() => {
     localStorage.setItem('contact', JSON.stringify(contact));
   }, [contact]);
-  useEffect(() => {
-    return () => {
-      localStorage.removeItem('contact');
-    };
-  }, []);
-  useEffect(() => {});
+
   const addContact = data => {
     if (isDublicate(data)) {
       return alert(`${data.name} -   is already in Phonebook List`);
